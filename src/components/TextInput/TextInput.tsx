@@ -17,9 +17,9 @@ const Root = ({ children }: RootProps) => {
     return <div className={clsx('h-12 flex items-center gap-3 py-4 px-3 rounded bg-gray-800  focus-within:ring-2 ring-cyan-300 w-full')}>{children}</div>
 }
 
-const Input = (props: InputProps) => {
+const Input = ({ className, ...props }: InputProps) => {
     return (
-        <input className={clsx('outline-none bg-transparent flex-1 text-gray-100 text-xs placeholder:text-gray-400')} {...props} />
+        <input className={clsx('outline-none bg-transparent flex-1 text-gray-100 text-xs placeholder:text-gray-400', className)} {...props} />
     )
 }
 
