@@ -1,9 +1,9 @@
-name: Deploy Docs with Storybook
+name: Deploy Storybook
 
 on:
   push:
     branches:
-      - "main"
+      - main
 
 jobs:
   build-and-deploy:
@@ -25,6 +25,6 @@ jobs:
         run: npm run build:storybook
 
       - name: Deploy Storybook
-        run: npm run deploy:storybook -- --existing-output-dir=storybook-static --ci
+        run: npm run deploy:storybook -- --ci --existing-output-dir=storybook-static
         env:
-          GH_TOKEN: ${{github.actor}}:${{secrets.GITHUB_TOKEN}}
+          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
